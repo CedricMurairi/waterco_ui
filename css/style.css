@@ -1,0 +1,177 @@
+
+body{
+    background-color: #ECEFF1;
+    max-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.logo{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+nav ul{
+    text-decoration: none;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+nav li:hover, nav .current{
+    background-color: gray;
+}
+
+main{
+    height: 70vh;
+    max-height: 80vh;
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+}
+
+form{
+    text-align: center;
+}
+
+input, button, select, .warning, .info{
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+select{
+    width: 320px;
+    background-color: white;
+}
+
+input{
+    width: 300px;
+}
+
+button{
+    background-color: gray
+}
+
+.delete{
+    background-color: #BB363C;
+    border: none;
+    color: white;
+}
+
+.edit{
+    background-color: #317447;
+    color: white;
+    border: none;
+}
+
+.save{
+    background-color: #0C5ED7;
+    color: white;
+    border: none;
+}
+
+.details{
+    display: flex;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 5px 10px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.edit-member-form, .del div, .edit-premise-form, .edit-route-form, .edit-user-form{
+    width: fit-content;
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 5px;
+    margin: 100px auto;
+}
+
+.ed, .del, .edit-member, .delete-member{
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.auth{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.auth-btn{
+    text-decoration: underline;
+    color: blue;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.auth-btn:hover, button{
+    cursor: pointer;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.warning{
+    background-color: #BB363C;
+    border: none;
+    color: white;
+}
+
+.info{
+    background-color: #40D3F2;
+    border: none;
+    color: black;
+}
+
+button:disabled{
+    opacity: 0.5;
+}
