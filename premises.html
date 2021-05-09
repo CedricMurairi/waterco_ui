@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Premises</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Water.Co</div>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Users</li></a>
+                <a href="members.html"><li>Members</li></a>
+                <a href="premises.html"><li class="current">Premises</li></a>
+                <a href="routes.html"><li>Routes</li></a>                
+                <a href="bills.html"><li>Bills</li></a>               
+                <a href="payments.html"><li>Payments</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form">
+            <form class="create-premise-form">
+                <p><input type="text" name="name" id="name" placeholder="Premise's Name"></p>
+                <p>
+                    <select name="owner" id="owner">
+                        <option value="" selected disabled hidden>Select Premise owner</option>
+                    </select>
+                </p>
+                <p>
+                    <select name="active" id="active">
+                        <option value="" selected disabled hidden>Select Premise status</option>
+                        <option value="true">True | Active premise</option>
+                        <option value="false">False | Inactive premise</option>
+                    </select>
+                </p>
+                <p><input type="number" name="consumption" id="consumption" placeholder="Monthly Consumption in Liters"></p>
+                <p>
+                    <select name="route" id="route">
+                        <option value="" selected disabled hidden>Select Route supplying</option>
+                    </select>
+                </p>
+                <p><button class="add-premise">Add premise's details</button></p>
+            </form>
+        </div>
+        <div class="details premises-details">
+            <div>
+                <p>
+                    <select name="route" id="route-filter">
+                        <option value="" selected disabled hidden>Filter by Route</option>
+                    </select>
+                    <select name="route" id="owner-filter">
+                        <option value="" selected disabled hidden>Filter by Client</option>
+                    </select>
+                </p>
+            </div>
+            <table class="premises-table">
+                <tr>
+                    <th>Premise ID</th>
+                    <th>Premise Name</th>
+                    <th>Owner ID</th>
+                    <th>Monthly Consumption</th>
+                    <th>Route ID</th>
+                    <th>Is Active</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        <div class="ed edit-premise hidden">
+            <form class="edit-premise-form">
+                <p><input type="text" name="name" id="name" placeholder="Premise's Name"></p>
+                <p>
+                    <select name="owner" id="ed-owner">
+                    </select>
+                </p>
+                <p>
+                    <select name="active" id="active">
+                        <option value="true">True | Active premise</option>
+                        <option value="false">False | Inactive premise</option>
+                    </select>
+                </p>
+                <p><input type="number" name="consumption" id="consumption" placeholder="Monthly Consumption in Liters"></p>
+                <p>
+                    <select name="route" id="ed-route">
+                    </select>
+                </p>
+                <p><button class="edit-premise-btn" onclick="return edit_premise()">Edit details</button></p>
+            </form>
+        </div>
+        <div class="del delete-premise hidden">
+            <div>
+                <p>Are you sure you want to delete?</p>
+                <button class="delete" onclick="return delete_premise()">Yes</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/javascript/premises.js"></script>
+</body>
+</html>

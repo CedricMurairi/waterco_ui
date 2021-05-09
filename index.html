@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home - Authentication</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Water.Co</div>
+        <nav>
+            <ul>
+                <a href="index.html"><li class="current">Users</li></a>
+                <a href="members.html"><li>Members</li></a>
+                <a href="premises.html"><li>Premises</li></a>
+                <a href="routes.html"><li>Routes</li></a>                
+                <a href="bills.html"><li>Bills</li></a>               
+                <a href="payments.html"><li>Payments</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form">
+            <form class="create-user-form">
+                <p><input type="text" name="name" id="name-create" placeholder="User Name"></p>
+                <p><input type="email" name="email" id="email-create" placeholder="User Email"></p>
+                <p><input type="password" name="pass" id="pass-create" placeholder="User Password"></p>
+                <p><button class="add-user">Add user details</button></p>
+            </form>
+            <button onclick="return log_out()">LogOut</button>
+        </div>
+        <div class="details users-details">
+            <table class="users-table">
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>User Password</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        <div class="ed edit-user hidden">
+            <form class="edit-user-form">
+                <p><input type="text" name="name" id="name-edit" placeholder="User Name"></p>
+                <p><input type="email" name="email" id="email-edit" placeholder="User Email"></p>
+                <p><input type="password" name="pass" id="pass-edit" placeholder="User Password"></p>
+                <p><button class="edit-user-btn" onclick="return edit_user()">Edit details</button></p>
+            </form>
+        </div>
+        <div class="del delete-user hidden">
+            <div>
+                <p>Are you sure you want to delete?</p>
+                <button class="delete" onclick="return delete_user()">Yes</button>
+            </div>
+        </div>
+        <div class="auth">
+            <form class="reg hidden">
+                <p><input type="text" name="name" id="name" placeholder="User Name"></p>
+                <p><input type="email" name="email" id="email-reg" placeholder="User Email"></p>
+                <p><input type="password" name="pass" id="pass-reg" placeholder="Passcode"></p>
+                <p><input type="password" name="repeat-pass" id="repeat-pass" placeholder="Repeat Passcode"></p>
+                <button id="register">Register</button>
+                <p>Already have an account? <span class="auth-btn">Login</span></p>
+            </form>
+            <form class="log hidden">
+                <p><input type="email" name="email" id="email-log" placeholder="User Email"></p>
+                <p><input type="password" name="pass" id="pass-log" placeholder="Passcode"></p>
+                <button id="login">Login</button>
+                <p>Do not have an account? <span class="auth-btn">Register</span></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/javascript/index.js"></script>
+</body>
+</html>

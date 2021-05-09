@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Routes</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Water.Co</div>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Users</li></a>
+                <a href="members.html"><li>Members</li></a>
+                <a href="premises.html"><li>Premises</li></a>
+                <a href="routes.html"><li class="current">Routes</li></a>                
+                <a href="bills.html"><li>Bills</li></a>               
+                <a href="payments.html"><li>Payments</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form">
+            <form class="create-route-form">
+                <p><input type="text" name="name" id="name" placeholder="Route's Name"></p>
+                <p>
+                    <select name="active" id="active">
+                        <option value="true">True | Active route</option>
+                        <option value="false">False | Inactive route</option>
+                    </select>
+                </p>
+                <p><button class="add-router">Add Route's details</button></p>
+            </form>
+        </div>
+        <div class="details routes-details">
+            <table class="routes-table">
+                <tr>
+                    <th>Route ID</th>
+                    <th>Route Name</th>
+                    <th>Is Active</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        <div class="ed edit-route hidden">
+            <form class="edit-route-form">
+                <p><input type="text" name="name" id="name" placeholder="Client's Name"></p>
+                <p>
+                    <select name="active" id="active">
+                        <option value="true">True | Active route</option>
+                        <option value="false">False | Inactive route</option>
+                    </select>
+                </p>
+                <p><button class="edit-route-btn" onclick="return edit_route()">Edit details</button></p>
+            </form>
+        </div>
+        <div class="del delete-route hidden">
+            <div>
+                <p>Are you sure you want to delete?</p>
+                <button class="delete" onclick="return delete_route()">Yes</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/javascript/routes.js"></script>
+</body>
+</html>

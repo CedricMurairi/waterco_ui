@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bills</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Water.Co</div>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Users</li></a>
+                <a href="members.html"><li>Members</li></a>
+                <a href="premises.html"><li>Premises</li></a>
+                <a href="routes.html"><li>Routes</li></a>                
+                <a href="bills.html"><li class="current">Bills</li></a>               
+                <a href="payments.html"><li>Payments</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form">
+            <form class="create-bill-form">
+                <p>
+                    <select name="premise" id="premise">
+                        <option value="" selected disabled hidden>Select Billed Premise </option>
+                    </select>
+                </p>
+                <p><input type="date" name="date" id="date"></p>
+                <p><button class="add-bill">Add Bill's details</button></p>
+            </form>
+        </div>
+        <div class="details bills-details">
+            <div>
+                <p>
+                    <select name="premise" id="premise-filter">
+                        <option value="" selected disabled hidden>Filter by Premise</option>
+                    </select>
+                </p>
+            </div>
+            <table class="bills-table">
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Premise ID</th>
+                    <th>Amount</th>
+                    <th>Due Date</th>
+                    <th>Paid</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        <div class="del delete-bill hidden">
+            <div>
+                <p>Are you sure you want to delete?</p>
+                <button class="delete" onclick="return delete_bill()">Yes</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/javascript/bills.js"></script>
+</body>
+</html>
