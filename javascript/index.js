@@ -118,7 +118,7 @@ function edit_user(){
                     <td>${data['data'].user_id}</td>
                     <td>${data['data'].name}</td>
                     <td>${data['data'].email}</td>
-                    <td>Super secret - &#128516</td>s
+                    <td>Super secret - &#128516</td>
                     <td><button data-id=${data['data'].user_id} class="edit" onclick="show_user(this.dataset.id)">Edit</button></td>
                     <td><button data-id=${data['data'].user_id} class="delete" onclick="show_delete_box(this.dataset.id)">Delete</button></td>
                 `
