@@ -108,6 +108,16 @@ premise_filter.onchange = (event) => {
             .then(data => {
                 console.log(data);
                 const premises = data['data'];
+                table.innerHTML = `
+                    <tr>
+                        <th>Bill ID</th>
+                        <th>Premise ID</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Paid</th>
+                        <th></th>
+                    </tr>
+                `;
                 premises.forEach(element => {
                     table.innerHTML += `
                         <tr class="bill_${element.bill_id}">

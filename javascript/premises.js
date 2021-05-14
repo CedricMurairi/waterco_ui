@@ -227,6 +227,18 @@ route_filter.onchange = (event) => {
             .then(data => {
                 console.log(data);
                 const premises = data['data'];
+                table.innerHTML = `
+                    <tr>
+                        <th>Premise ID</th>
+                        <th>Premise Name</th>
+                        <th>Owner ID</th>
+                        <th>Monthly Consumption</th>
+                        <th>Route ID</th>
+                        <th>Is Active</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                `;
                 premises.forEach(element => {
                     table.innerHTML += `
                         <tr class="premise_${element.premise_id}">
@@ -245,6 +257,18 @@ route_filter.onchange = (event) => {
         }
         else{
             console.log(response);
+            table.innerHTML = `
+                <tr>
+                    <th>Premise ID</th>
+                    <th>Premise Name</th>
+                    <th>Owner ID</th>
+                    <th>Monthly Consumption</th>
+                    <th>Route ID</th>
+                    <th>Is Active</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            `;
         }
     })
 };
@@ -264,6 +288,18 @@ owner_filter.onchange = (event) => {
             .then(data => {
                 console.log(data);
                 const premises = data['data'];
+                table.innerHTML = `
+                    <tr>
+                        <th>Premise ID</th>
+                        <th>Premise Name</th>
+                        <th>Owner ID</th>
+                        <th>Monthly Consumption</th>
+                        <th>Route ID</th>
+                        <th>Is Active</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                `;
                 premises.forEach(element => {
                     table.innerHTML += `
                         <tr class="premise_${element.premise_id}">
@@ -282,6 +318,18 @@ owner_filter.onchange = (event) => {
         }
         else{
             console.log(response);
+            table.innerHTML = `
+                <tr>
+                    <th>Premise ID</th>
+                    <th>Premise Name</th>
+                    <th>Owner ID</th>
+                    <th>Monthly Consumption</th>
+                    <th>Route ID</th>
+                    <th>Is Active</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            `;
         }
     })
 };

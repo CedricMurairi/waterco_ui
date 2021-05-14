@@ -68,17 +68,19 @@ window.onload = () => {
             .then(data => {
                 const bills = data['data'];
                 bills.forEach(element => {
-                    fetch(PREMISE_URL + `/${element.premise_id}`, {
-                        method: 'GET',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }).then(response => response.json())
-                    .then(data => {
-                        bill.innerHTML += `
-                            <option data-premise=${data['data'].premise_id} value=${element.bill_id}>Due: ${element.amount} Rwf | Premise: ${data['data'].name}</option>
-                        `;
-                    });
+                    if (!element.paid){
+                        fetch(PREMISE_URL + `/${element.premise_id}`, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(response => response.json())
+                        .then(data => {
+                            bill.innerHTML += `
+                                <option data-premise=${data['data'].premise_id} value=${element.bill_id}>Due: ${element.amount} Rwf | Premise: ${data['data'].name}</option>
+                            `;
+                        });
+                    }
                 });
             })
         }
@@ -129,6 +131,16 @@ premise_filter.onchange = (event) => {
             .then(data => {
                 console.log(data);
                 const premises = data['data'];
+                table.innerHTML = `
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Premise ID</th>
+                        <th>Bill ID</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                `;
                 premises.forEach(element => {
                     table.innerHTML += `
                         <tr class="payment_${element.payment_id}">
@@ -145,6 +157,16 @@ premise_filter.onchange = (event) => {
         }
         else{
             console.log(response);
+            table.innerHTML = `
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Premise ID</th>
+                    <th>Bill ID</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th></th>
+                </tr>
+            `;
         }
     })
 };
